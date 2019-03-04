@@ -30,8 +30,8 @@ hist(sample(x, 104,replace = TRUE), xlim=c(0,30))
 
 
 ###Challenge 11.2
-f<-file.choose()
-d <- read.csv(f, header = TRUE, sep = ",", stringsAsFactors = FALSE)
+f<-"~/Desktop/zombies.csv"
+d <- read.table(f, header = TRUE, sep = ",", stringsAsFactors = FALSE)
 head(d)
 
 #2a) Calculate the population mean and standard deviation for each quantitative random variable (height, weight, age, number of zombies killed, and years of education).
@@ -209,7 +209,7 @@ zsamp<- rbind(res1)
 zsamp
 zzsamp<- rbind (nnsamp, zsamp)
 zzsamp
-
+zzsamp<- as.data.frame(zzsamp)
 #Height
 mean(zzsamp$Mean_Height)
 sd(zzsamp$Mean_Height)
